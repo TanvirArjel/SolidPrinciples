@@ -1,7 +1,7 @@
 # Open Closed Principle
-This principle stated that:
+This principle states that:
 
-***A software module or class should be designed in such way that it is open for extension and closed modification.***
+>***A software module or class should be designed in such way that it is open for extension and closed modification.***
 
 ## Bad Design
 According to the **Open Closed Principle**, the following class design is a bad design.

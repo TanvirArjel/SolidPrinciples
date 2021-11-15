@@ -1,7 +1,7 @@
 ﻿# Interface Segregation Principle
-This principle stated that:
+This principle states that:
 
- ***Not client should be forced to implenment a method that it does not use or not relevant to it.***
+ >***Not client should be forced to implenment a method that it does not use or not relevant to it.***
  
  ## Bad Design
  According to the **Interface Segregation Principle**, the following code is a bad design.
