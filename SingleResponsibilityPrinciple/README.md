@@ -1,12 +1,14 @@
 ﻿# Single Responsibility Principle
+
+This principle stated that:
  
- A class should or entity should do only one task at a time or should have only one responsibility at time.
+***A class should or entity should do only one task at a time or should have only one responsibility at time.***
  
  ## Bad Design
  The following code is not following the single resonsibility principle.
  
  ```C#
-internal interface IUserService
+public interface IUserService
 {
     bool Login(string userName, string password);
     bool Register(string email, string userName, string password, string confirmPasword);
@@ -14,7 +16,7 @@ internal interface IUserService
     void SendEmail(string emailAddress, string content);
 }
  ```
- Problem is:
+The Problem is:
  
    1. The above `IUserService` is doing three distinct jobs or reponsibilities where logging error and sending email should not belong to the `IUserSerivce`.
 

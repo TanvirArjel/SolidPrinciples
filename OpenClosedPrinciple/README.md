@@ -1,5 +1,7 @@
 # Open Closed Principle
-A software module or class should be designed in such way that it is open for extension and closed modification.
+This principle stated that:
+
+***A software module or class should be designed in such way that it is open for extension and closed modification.***
 
 ## Bad Design
 According to the **Open Closed Principle**, the following class design is a bad design.
@@ -23,12 +25,12 @@ public class ReportGeneration
 }
 ```
 
-Problem is:
+The Problems are:
   1. If we would like to add **CSV Report Generation** then we have to modify the `ReportGeneration` class.
-  2. We have to test all the functionalities of the `ReportGeneration` class again to make sure that with latest latest modification no existing functionalities has been broken.
+  2. We have to test all the functionalities of the `ReportGeneration` class again to make sure that with latest modification no existing functionalities have been broken.
 
 ## Good Design
-If we design ReportGeneration as follows then we can add as many types of new ReportGenerations without altering the existing ReportGeneration classes.
+If we design the ReportGeneration as follows then we can add as many types of new ReportGenerations without altering the existing ReportGeneration classes.
 
 ```C#
 // Interface

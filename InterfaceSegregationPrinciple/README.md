@@ -1,20 +1,22 @@
 ﻿# Interface Segregation Principle
- Not client should be forced to implenmented an method that it does not use or not relevant to it.
+This principle stated that:
+
+ ***Not client should be forced to implenment a method that it does not use or not relevant to it.***
  
  ## Bad Design
- According to the **Interface Segregation Principle** the following code is a bad design.
+ According to the **Interface Segregation Principle**, the following code is a bad design.
  
  ```C#
 public interface IEmployeeTasks
 {
-    void CreateSubTask();
+    void CreateTask();
     void AssginTask();
     void WorkOnTask();
 }
 
 public class TeamLead : IEmployeeTasks
 {
-    public void CreateSubTask()
+    public void CreateTask()
     {
         Console.WriteLine("Task created.");
     }
@@ -32,7 +34,7 @@ public class TeamLead : IEmployeeTasks
 
 public class Manager : IEmployeeTasks
 {
-    public void CreateSubTask()
+    public void CreateTask()
     {
         Console.WriteLine("Task created.");
     }
@@ -51,8 +53,8 @@ public class Manager : IEmployeeTasks
 
 public class Programmer : IEmployeeTasks
 {
-    // The Programmer client has been forced to implement `CreateSubTask()` method although Programmer cannot create task.
-    public void CreateSubTask()
+    // The Programmer client has been forced to implement `CreateTask()` method although Programmer cannot create task.
+    public void CreateTask()
     {
         throw new NotImplementedException();
     }
@@ -71,17 +73,16 @@ public class Programmer : IEmployeeTasks
  ```
  The problems are:
  
-  1. The Manager client has been forced to implement `WorkOnTask()` method although Manager does not work on task.
-  2. The Programmer client has been forced to implement `CreateSubTask()` method although Programmer cannot create task.
-  3. The Programmer client has been forced to implement `AssginTask()` method although Programmer cannot assign task.
+  1. The **Manager** client has been forced to implement `WorkOnTask()` method although **Manager** does not work on task.
+  2. The **Programmer** client has been forced to implement `CreateTask()` and `AssginTask()` methods although **Programmer** cannot create and assign task.
 
 ## Good Design
-If redesign the above the code as follows, it fix all the three issues mentioned above:
+If we redesign the above the code as follows, it fixes all the three issues mentioned above:
 ```C#
 // Interfaces
 public interface ILead
 {
-    void CreateSubTask();
+    void CreateTask();
     void AssginTask();
 }
 
@@ -93,7 +94,7 @@ public interface IProgrammer
 // Clients
 public class Manager : ILead
 {
-    public void CreateSubTask()
+    public void CreateTask()
     {
         Console.WriteLine("Task created.");
     }
@@ -106,7 +107,7 @@ public class Manager : ILead
 
 public class TeamLead : ILead, IProgrammer
 {
-    public void CreateSubTask()
+    public void CreateTask()
     {
         Console.WriteLine("Task created.");
     }

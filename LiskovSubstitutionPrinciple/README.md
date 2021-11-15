@@ -1,11 +1,15 @@
 ﻿# Liskov Substitution Principle
- Defition: A child/sub/derived class should be completely substitutable to it's base or parent class. This principle is very similar to the **Interface Segration Principle**. This principal is also related to the `Polymorphism` which is one of the four pillars of OOP.
+This principle stated that:
+
+ ***A child/sub/derived class should be completely substitutable to it's base or parent class.***
+
+ This principle is very similar to the **Interface Segration Principle**. This principal is also related to the `Polymorphism` which is one of the four pillars of OOP.
  
  ## Bad Design
- According to the **Liskov Substitution Principle**, following is a bad design.
+ According to the **Liskov Substitution Principle**, the following code is a bad design.
  
  ```C#
- // Interfaces
+ // Interface
 internal interface IBird
 {
     void MakeSound();
@@ -15,6 +19,7 @@ internal interface IBird
     void Run();
 }
 
+// Implementations
 public class Duck : IBird
 {
     public void MakeSound()
@@ -54,7 +59,7 @@ public class Ostrich : IBird
     }
 }
  ```
- Problem is:
+ The Problem is:
  
  If we follow **Polymorphism** and call the `Fly()` method from `IBird` reference variable with `Ostrich` object then it will throw `NotImplementedException` as follows:
   
@@ -63,7 +68,7 @@ IBird bird = new Ostrich();
 bird.Fly(); // Will throw NotImplementedException
 ```
 ## Good Design
-If we redesign the above code as follows it will solve the above issue.
+If we redesign the above code as follows, it will solve the above issue.
 ```C#
 // Interfaces
 internal interface IBird
