@@ -2,7 +2,7 @@
 
 This principle states that:
  
->***A class should or entity should do only one task at a time or should have only one responsibility at time.***
+>***A class or entity should do only one task at a time or should have only one responsibility at time.***
  
  ## Bad Design
  The following code is not following the single resonsibility principle.
