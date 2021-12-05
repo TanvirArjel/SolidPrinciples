@@ -13,3 +13,7 @@ SOLID is an acronym where
 4. I stands for [Interface Segregation Principle (ISP)](https://github.com/TanvirArjel/SolidPrinciples/tree/main/InterfaceSegregationPrinciple)
 
 5. D stands for [Dependency Inversion Principle (DIP)](https://github.com/TanvirArjel/SolidPrinciples/tree/main/DependencyInversionPrinciple)
+
+# ⭐ Giving a star
+
+**If you find this repository useful, please don't forget to encouraging me to do more such stuffs by giving a star to this repository. Thank you.**
