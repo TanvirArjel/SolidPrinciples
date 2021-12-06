@@ -14,6 +14,8 @@ SOLID is an acronym where
 
 5. D stands for [Dependency Inversion Principle (DIP)](https://github.com/TanvirArjel/SolidPrinciples/tree/main/DependencyInversionPrinciple)
 
+Please click on the hyperlink of the each principle to know details about that principle.
+
 # ⭐ Giving a star
 
 **If you find this repository useful, please don't forget to encouraging me to do more such stuffs by giving a star to this repository. Thank you.**
