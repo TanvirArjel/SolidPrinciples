@@ -38,7 +38,7 @@ public class Duck : IBird
     }
 }
 
-// This breaks the Liskov substituion principle because if we follow polymorphism and call the Run() method from IBird reference variable
+// This breaks the Liskov substituion principle because if we follow polymorphism and call the Fly() method from IBird reference variable
 // then it will throw NotImplementedException.
 public class Ostrich : IBird
 {
@@ -114,4 +114,4 @@ public class Ostrich : IBird
     }
 }
 ```
-Now it looks fine, isn't it?
+**Now it looks fine, isn't it?**
