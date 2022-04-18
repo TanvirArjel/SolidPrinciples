@@ -1,7 +1,7 @@
 ﻿# Interface Segregation Principle
 This principle states that:
 
- >***Not client should be forced to implenment a method that it does not use or not relevant to it.***
+ >***No client should be forced to implenment a method that it does not use or not relevant to it.***
  
  ## Bad Design
  According to the **Interface Segregation Principle**, the following code is a bad design.
@@ -131,4 +131,4 @@ public class Programmer : IProgrammer
     }
 }
 ```
-Now it's look fine, isn't it?
+**Now it's look fine, isn't it?**
