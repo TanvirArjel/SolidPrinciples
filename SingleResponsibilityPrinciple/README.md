@@ -41,4 +41,4 @@ public interface IEmailSender
     void Send(string emailAddress, string content);
 }
 ```
-Not it looks fine, isn't it?
+**Now it looks fine, isn't it?**
