@@ -9,7 +9,12 @@ According to the **Open Closed Principle**, the following class design is a bad 
 ```C#
 public class ReportGeneration
 {
-    public string ReportType { get; set; }
+    public ReportGeneration(string reportType) 
+    {
+       ReportType = reportType;
+    }
+    
+    public string ReportType { get; }
     
     public void GenerateReport(Employee employee)
     {
@@ -27,7 +32,7 @@ public class ReportGeneration
 
 The Problems are:
   1. If we would like to add **CSV Report Generation** then we have to modify the `ReportGeneration` class.
-  2. We have to test all the functionalities of the `ReportGeneration` class again to make sure that with latest modification no existing functionalities have been broken.
+  2. We have to test all the functionalities of the `ReportGeneration` class again to make sure that with the latest modification no existing functionalities have been broken.
 
 ## Good Design
 If we design the ReportGeneration as follows then we can add as many types of new ReportGenerations without altering the existing ReportGeneration classes.
@@ -36,13 +41,13 @@ If we design the ReportGeneration as follows then we can add as many types of ne
 // Interface
 public interface IReportGeneration
 {
-    void GenerateReport();
+    void GenerateReport(Employee employee);
 }
 
 // Clients
 public class PdfReportGeneration : IReportGeneration
 {
-    public void GenerateReport()
+    public void GenerateReport(Employee employee)
     {
         Console.WriteLine("Generating pdf report.");
     }
@@ -50,7 +55,7 @@ public class PdfReportGeneration : IReportGeneration
 
 public class CRSReportGeneration : IReportGeneration
 {
-    public void GenerateReport()
+    public void GenerateReport(Employee employee)
     {
         Console.WriteLine("Generating CRS report.");
     }
@@ -58,7 +63,7 @@ public class CRSReportGeneration : IReportGeneration
 
 public class CsvReportGeneration : IReportGeneration
 {
-    public void GenerateReport()
+    public void GenerateReport(Employee employee)
     {
         Console.WriteLine("Generating csv report.");
     }
