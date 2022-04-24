@@ -1,9 +1,9 @@
 ﻿# Liskov Substitution Principle
 This principle states that:
 
- >***A child/sub/derived class should be completely substitutable to it's base or parent class.***
+ >***A child/sub/derived class should be completely substitutable to its base or parent class.***
 
- This principle is very similar to the **Interface Segration Principle**. This principal is also related to the `Polymorphism` which is one of the four pillars of OOP.
+ This principle is very similar to the **Interface Segregation Principle**. This principal is also related to the `Polymorphism` which is one of the four pillars of OOP.
  
  ## Bad Design
  According to the **Liskov Substitution Principle**, the following code is a bad design.
